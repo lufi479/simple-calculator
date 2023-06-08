@@ -37,3 +37,28 @@ let firstNum = 0;
 let operator = '+';
 
 let secondNum = 0;
+
+let currDecimal = false;
+
+const currNum = document.querySelector('.screen-current');
+
+const numbers = document.querySelectorAll('[data-number]');
+numbers.forEach(num => num.addEventListener('click', addNum));
+
+function addNum(e){
+    if (e.target.innerText === '.') {
+        if (currDecimal === false){
+            currNum.innerText += e.target.innerText;
+            currDecimal = true;
+        }
+    }
+    else {
+        if (currNum.innerText !== '0'){
+            currNum.innerText += e.target.innerText;
+        }
+        else {
+            currNum.innerText = e.target.innerText;
+        }
+    }
+    
+}
