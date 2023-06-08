@@ -7,6 +7,9 @@ function subtract(first,second){
 }
 
 function divide(first,second){
+    if (second === 0){
+        return 'STOP';
+    }
     return first / second;
 }
 
@@ -59,7 +62,10 @@ function changeSign(e){
 }
 
 function chooseOperator(e){
-    if (choseOp === false){
+    if (screenCurrNum.innerText === 'STOP'){
+        return;
+    }
+    else if (choseOp === false){
         prevNum = Number(screenCurrNum.innerText);
         currDecimal = false;
         screenPrevNum.innerText = prevNum;
@@ -80,6 +86,14 @@ function equals(e){
         currNum = Number(screenCurrNum.innerText);
         prevNum = operate(operator,prevNum, currNum);
         screenCurrNum.innerText = prevNum;
+        if (prevNum === 'STOP'){
+            allClear(0);
+            screenCurrNum.innerText = 'STOP';
+        }
+        if (screenCurrNum.innerText.length > 19){
+            screenCurrNum.innerText = screenCurrNum.innerText.substring(0,19);
+            prevNum = Number(screenCurrNum.innerText);
+        }
         currNum = 0;
         choseOp = false;
         currDecimal = false;
@@ -88,6 +102,9 @@ function equals(e){
 }
 
 function addNum(e){
+    if (screenCurrNum.innerText.length >18){
+        return;
+    }
     if (e.target.innerText === '.') {
         if (currDecimal === false){
             screenCurrNum.innerText += e.target.innerText;
@@ -140,3 +157,6 @@ numbers.forEach(num => num.addEventListener('click', addNum));
 
 const operators = document.querySelectorAll('[data-operator]');
 operators.forEach(op => op.addEventListener('click', chooseOperator));
+
+
+// The screen space is 19 numbers max
