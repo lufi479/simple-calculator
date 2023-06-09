@@ -1,0 +1,39 @@
+.calculator {
+    width: 400px;
+    background-color: darkcyan;
+    padding: 20px;
+}
+
+.screen {
+    background-color: white;
+    border-radius: 10px;
+    text-align: end;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+.screen-prev {
+    font-size: 20px;
+}
+
+.screen-current {
+    font-size: 40px;
+}
+
+.buttons {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.equals {
+    grid-column: 3 / 5;
+}
