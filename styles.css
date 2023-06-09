@@ -1,7 +1,18 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    height: 100vh;
+    background-color: rgb(247, 219, 224);
+}
+
 .calculator {
     width: 400px;
-    background-color: darkcyan;
+    background-color:lightskyblue;
     padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black
 }
 
 .screen {
@@ -37,16 +48,4 @@
 
 #equals {
     grid-column: 3 / 5;
-}
-
-#all-clear{
-
-}
-
-#clear{
-
-}
-
-#sign{
-
 }
