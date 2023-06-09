@@ -15,6 +15,7 @@
 
 .screen-prev {
     font-size: 20px;
+    min-height: 23px;
 }
 
 .screen-current {
@@ -36,4 +37,16 @@
 
 #equals {
     grid-column: 3 / 5;
+}
+
+#all-clear{
+
+}
+
+#clear{
+
+}
+
+#sign{
+
 }
